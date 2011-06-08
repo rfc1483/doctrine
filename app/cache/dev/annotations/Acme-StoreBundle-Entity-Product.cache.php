@@ -1,1 +1,1 @@
-<?php return unserialize('a:1:{i:0;O:27:"Doctrine\\ORM\\Mapping\\Entity":2:{s:15:"repositoryClass";N;s:5:"value";N;}}');
+<?php return unserialize('a:1:{i:0;O:27:"Doctrine\\ORM\\Mapping\\Entity":2:{s:15:"repositoryClass";s:45:"Acme\\StoreBundle\\Repository\\ProductRepository";s:5:"value";N;}}');

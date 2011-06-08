@@ -5,7 +5,7 @@ namespace Acme\StoreBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Acme\StoreBundle\Repository\ProductRepository")
  */
 class Product {
 
@@ -28,15 +28,28 @@ class Product {
      * @ORM\Column(type="text")
      */
     protected $description;
+    /**
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="products")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
+    protected $category;
 
     /**
      * Get id
      *
      * @return integer $id
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
+    }
+
+    /**
+     * Set id
+     * 
+     * @param integer $id
+     */
+    public function setId($id) {
+        $this->id = $id;
     }
 
     /**
@@ -44,8 +57,7 @@ class Product {
      *
      * @param string $name
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
     }
 
@@ -54,8 +66,7 @@ class Product {
      *
      * @return string $name
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -64,8 +75,7 @@ class Product {
      *
      * @param decimal $price
      */
-    public function setPrice($price)
-    {
+    public function setPrice($price) {
         $this->price = $price;
     }
 
@@ -74,8 +84,7 @@ class Product {
      *
      * @return decimal $price
      */
-    public function getPrice()
-    {
+    public function getPrice() {
         return $this->price;
     }
 
@@ -84,8 +93,7 @@ class Product {
      *
      * @param text $description
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
     }
 
@@ -94,8 +102,28 @@ class Product {
      *
      * @return text $description
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
+    }
+
+
+    /**
+     * Set category
+     *
+     * @param Acme\StoreBundle\Entity\Category $category
+     */
+    public function setCategory(\Acme\StoreBundle\Entity\Category $category)
+    {
+        $this->category = $category;
+    }
+
+    /**
+     * Get category
+     *
+     * @return Acme\StoreBundle\Entity\Category $category
+     */
+    public function getCategory()
+    {
+        return $this->category;
     }
 }

@@ -336,7 +336,7 @@
     <parameter key="assetic.use_controller">true</parameter>
     <parameter key="assetic.read_from">C:\xampp\htdocs\doctrine\app/../web</parameter>
     <parameter key="assetic.write_to">C:\xampp\htdocs\doctrine\app/../web</parameter>
-    <parameter key="assetic.java.bin">c:\WINDOWS\system32\java.EXE</parameter>
+    <parameter key="assetic.java.bin">C:\WINDOWS\system32\java.EXE</parameter>
     <parameter key="assetic.node.bin">/usr/bin/node</parameter>
     <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
     <parameter key="assetic.filter.cssrewrite.class">Assetic\Filter\CssRewriteFilter</parameter>

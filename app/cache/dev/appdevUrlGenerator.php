@@ -15,6 +15,9 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     static private $declaredRouteNames = array(
        'homepage' => true,
        'create' => true,
+       'update' => true,
+       'delete' => true,
+       'createProduct' => true,
        '_welcome' => true,
        '_demo_login' => true,
        '_security_check' => true,
@@ -66,6 +69,21 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function getcreateRouteInfo()
     {
         return array(array (), array (  '_controller' => 'Acme\\StoreBundle\\Controller\\DefaultController::createAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/create/',  ),));
+    }
+
+    private function getupdateRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\StoreBundle\\Controller\\DefaultController::updateAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/update/',  ),));
+    }
+
+    private function getdeleteRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\StoreBundle\\Controller\\DefaultController::deleteAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/delete/',  ),));
+    }
+
+    private function getcreateProductRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Acme\\StoreBundle\\Controller\\DefaultController::createProductAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/createProduct/',  ),));
     }
 
     private function get_welcomeRouteInfo()

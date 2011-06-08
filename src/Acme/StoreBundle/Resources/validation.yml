@@ -1,0 +1,4 @@
+Acme\FormBundle\Entity\Product:
+  properties:
+    id:
+      - NotBlank: ~

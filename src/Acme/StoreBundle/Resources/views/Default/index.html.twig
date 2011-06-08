@@ -6,6 +6,15 @@
 {% block content %}
     <h1>Menu</h1>
     <ul id="demo-list">
-        <li><a href="{{ path('create') }}">Create user</a></li>
+        <li><a href="{{ path('create') }}">Create product</a></li>
+    </ul>
+    <ul id="demo-list">
+        <li><a href="{{ path('update') }}">Update product</a></li>
+    </ul>
+    <ul id="demo-list">
+        <li><a href="{{ path('delete') }}">Delete product</a></li>
+    </ul>
+    <ul id="demo-list">
+        <li><a href="{{ path('createProduct') }}">Create product with category</a></li>
     </ul>
 {% endblock %}

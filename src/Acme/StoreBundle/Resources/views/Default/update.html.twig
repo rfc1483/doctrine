@@ -1,0 +1,20 @@
+{% extends 'AcmeStoreBundle::layout.html.twig' %}
+
+{% block content %}
+    <h1>Submit ID</h1>
+
+    <form action="{{ path('update') }}" method="post" {{ form_enctype(form) }} id="login">
+        {{ form_errors(form) }}
+        <div>
+            {{ form_label(form.id) }}
+            {{ form_errors(form.id) }}
+            {{ form_widget(form.id) }}
+        </div>
+        {{ form_rest(form) }}
+
+        <input type="submit" class="symfony-button-grey" value="Submit" />
+    </form>
+
+{% endblock %}
+
+{% set code = code(_self) %}

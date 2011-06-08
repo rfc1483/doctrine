@@ -40,6 +40,30 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Acme\\StoreBundle\\Controller\\DefaultController::createAction',  '_route' => 'create',);
         }
 
+        // update
+        if (rtrim($pathinfo, '/') === '/update') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'update');
+            }
+            return array (  '_controller' => 'Acme\\StoreBundle\\Controller\\DefaultController::updateAction',  '_route' => 'update',);
+        }
+
+        // delete
+        if (rtrim($pathinfo, '/') === '/delete') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'delete');
+            }
+            return array (  '_controller' => 'Acme\\StoreBundle\\Controller\\DefaultController::deleteAction',  '_route' => 'delete',);
+        }
+
+        // createProduct
+        if (rtrim($pathinfo, '/') === '/createProduct') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'createProduct');
+            }
+            return array (  '_controller' => 'Acme\\StoreBundle\\Controller\\DefaultController::createProductAction',  '_route' => 'createProduct',);
+        }
+
         // _welcome
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
